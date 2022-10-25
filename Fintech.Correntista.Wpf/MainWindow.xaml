@@ -1,0 +1,128 @@
+﻿<Window x:Class="Fintech.Correntista.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fintech.Correntista.Wpf"
+        mc:Ignorable="d"
+        Title="Fintech" WindowState="Maximized" Height="auto" Width="auto">
+    <TabControl>
+        <TabItem Header="Clientes" Name="clientesTabItem">
+            <TabControl TabStripPlacement="Left">
+                <TabItem Header="Pesquisa" Name="pesquisaClienteTabItem">
+                    <DataGrid x:Name="clienteDataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nome" Binding="{Binding Path=Nome}"/>
+                            <DataGridTextColumn Header="CPF" Binding="{Binding Path=Cpf}"/>
+                            <DataGridTextColumn Header="Sexo" Binding="{Binding Path=Sexo}"/>
+                            <DataGridTextColumn Header="Logradouro" Binding="{Binding Path=EnderecoResidencial.Logradouro}"/>
+                            <DataGridTextColumn Header="Número" Binding="{Binding Path=EnderecoResidencial.Numero}"/>
+                            <DataGridTextColumn Header="Cidade" Binding="{Binding Path=EnderecoResidencial.Cidade}"/>
+                            <DataGridTemplateColumn Header="Contas">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox ItemsSource="{Binding Contas}" DisplayMemberPath="Numero"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="+ Conta" Click="SelecionarClienteButton_Click"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="Cadastro">
+                    <StackPanel>
+                        <DockPanel>
+                            <Label Content="CPF:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="cpfTextBox" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Content="Nome:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="nomeTextBox" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Content="Data de nascimento:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="dataNascimentoTextBox" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Content="Sexo:" Width="120" HorizontalContentAlignment="Right"/>
+                            <ComboBox Name="sexoComboBox" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" Width="150"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Content="Logradouro:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="logradouroTextBox" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Content="Número:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="numeroLogradouroTextBox" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Content="Cidade:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="cidadeTextBox" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Label Content="CEP:" Width="120" HorizontalContentAlignment="Right"/>
+                            <TextBox x:Name="cepTextBox" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap"/>
+                        </DockPanel>
+                        <DockPanel>
+                            <Button x:Name="incluirClienteButton" Content="Incluir" Margin="120 2 0 0" Height="23" HorizontalAlignment="Left" Width="150" Click="incluirClienteButton_Click"/>
+                        </DockPanel>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </TabItem>
+        <TabItem Header="Contas" Name="contasTabItem">
+            <StackPanel >
+                <DockPanel>
+                    <Label Content="Cliente:" Width="120" HorizontalContentAlignment="Right"/>
+                    <TextBox Name="clienteTextBox" Width="580" HorizontalAlignment="Left" VerticalContentAlignment="Center" IsReadOnly="True" Height="23" TextWrapping="NoWrap" />
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Banco:" Width="120" HorizontalContentAlignment="Right"/>
+                    <ComboBox Name="bancoComboBox" DisplayMemberPath="Nome" SelectedValuePath="Numero" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" Width="150"/>
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Número Agência:" Width="120" HorizontalContentAlignment="Right"/>
+                    <TextBox Name="numeroAgenciaTextBox" Width="150" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap" />
+                    <Label Content="Dígito:" HorizontalContentAlignment="Right"/>
+                    <TextBox Name="dvAgenciaTextBox" Width="50" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap" />
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Número Conta:" Width="120" HorizontalContentAlignment="Right"/>
+                    <TextBox Name="numeroContaTextBox" Width="150" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap" />
+                    <Label Content="Dígito:" HorizontalContentAlignment="Left"/>
+                    <TextBox Name="dvContaTextBox" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="50" Height="23" TextWrapping="NoWrap" />
+                </DockPanel>
+                <DockPanel>
+                    <Label Content="Tipo da conta:" Width="120" HorizontalContentAlignment="Right"/>
+                    <ComboBox 
+                        Name="tipoContaComboBox" 
+                        HorizontalAlignment="Left" 
+                        VerticalContentAlignment="Center" 
+                        Height="23" 
+                        Width="150" 
+                        SelectionChanged="tipoContaComboBox_SelectionChanged"/>
+                </DockPanel>
+                <DockPanel Name="limiteDockPanel" Visibility="Collapsed">
+                    <Label Content="Limite:" Width="120" HorizontalContentAlignment="Right"/>
+                    <TextBox Name="limiteTextBox" Width="150" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="23" TextWrapping="NoWrap" />
+                </DockPanel>
+                <DockPanel>
+                    <Button Name="incluirContaButton" 
+                            Content="Incluir" 
+                            Margin="120 2 0 0" 
+                            Height="23" 
+                            HorizontalAlignment="Left" 
+                            Width="150"
+                            Click="incluirContaButton_Click"/>
+                </DockPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Operações" ></TabItem>
+    </TabControl>
+</Window>

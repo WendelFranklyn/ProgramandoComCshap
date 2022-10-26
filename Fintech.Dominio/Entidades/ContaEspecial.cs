@@ -15,21 +15,9 @@ namespace Fintech.Dominio.Entidades
 
         public decimal Limite { get; set; }
 
-        public override void EfetuarOperacao(decimal valor, TipoOperacao tipoOperacao)
+        public override void EfetuarOperacao(decimal valor, TipoOperacao tipoOperacao, decimal limite = 0)
         {
-            switch (tipoOperacao)
-            {
-                case TipoOperacao.Deposito:
-                    Saldo += valor;
-                    //Saldo = Saldo + valor;
-                    break;
-                case TipoOperacao.Saque:
-                    if (Saldo >= valor)
-                    {
-                        Saldo -= valor;
-                    }
-                    break;
-            }
+            base.EfetuarOperacao (valor, tipoOperacao, Limite);
         }
     }
 }

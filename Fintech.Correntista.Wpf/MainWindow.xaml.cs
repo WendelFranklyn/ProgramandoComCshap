@@ -217,7 +217,7 @@ namespace Fintech.Correntista.Wpf
 
             var movimento = conta.EfetuarOperacao(valor,operacao);
 
-            var movimentoRepositorio = new MovimentoRepositorio();
+            var movimentoRepositorio = new MovimentoRepositorio("Dados\\Movimento.txt");
             movimentoRepositorio.Inserir(movimento);
 
             movimentacaoDataGrid.ItemsSource = conta.Movimentos;

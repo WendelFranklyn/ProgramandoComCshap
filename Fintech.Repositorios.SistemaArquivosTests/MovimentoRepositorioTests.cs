@@ -15,12 +15,12 @@ namespace Fintech.Repositorios.SistemaArquivos.Tests
         [TestMethod()]
         public void InserirTest()
         {
+            var movimentoRepositorio = new MovimentoRepositorio("Dados\\Movimento.txt");
             var agencia = new Agencia {Numero = 123};
             var conta = new ContaCorrente(agencia, 456, "X");
 
-            var movimentoRepositorio = new MovimentoRepositorio();
 
-            var movimento = new Movimento(54, TipoOperacao.Deposito);
+            var movimento = new Movimento(54, TipoOperacao.Deposito,conta);
             movimento.Conta = conta;
             
             movimentoRepositorio.Inserir(movimento);

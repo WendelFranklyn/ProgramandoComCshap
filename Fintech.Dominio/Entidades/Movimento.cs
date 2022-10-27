@@ -8,6 +8,12 @@ namespace Fintech.Dominio.Entidades
 {
     public class Movimento
     {
+        public Movimento(decimal valor, TipoOperacao operacao)
+        {
+            Valor = valor;
+            Operacao = operacao;
+        }
+
         public Movimento(decimal valor, TipoOperacao tipoOperacao,Conta conta)
         {
             Valor = valor;
@@ -21,5 +27,6 @@ namespace Fintech.Dominio.Entidades
         public TipoOperacao TipoOperacao { get; set; }
         public decimal Valor { get; set; }
         public Conta Conta { get; set; } //= new Conta();
+        public TipoOperacao Operacao { get; }
     }
 }

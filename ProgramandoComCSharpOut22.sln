@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32901.82
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo01.Variaveis", "CSharp.Capitulo01.Variaveis\CSharp.Capitulo01.Variaveis.csproj", "{386C34D5-9E13-47FF-A038-C756329A8097}"
 EndProject
@@ -17,9 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.Dominio", "Fintech.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fintech", "Fintech", "{B6380AA0-D16D-4335-B5E8-5BD1E86EF1B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Correntista.Wpf", "Fintech.Correntista.Wpf\Fintech.Correntista.Wpf.csproj", "{5155BA1B-8F48-4224-96CB-797A78B33479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.Correntista.Wpf", "Fintech.Correntista.Wpf\Fintech.Correntista.Wpf.csproj", "{5155BA1B-8F48-4224-96CB-797A78B33479}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Capitulo02.GeradorSenhaTests", "CSharp.Capitulo02.GeradorSenhaTests\CSharp.Capitulo02.GeradorSenhaTests.csproj", "{23A3B194-93EB-4361-8541-AFB9EB05B827}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Capitulo02.GeradorSenhaTests", "CSharp.Capitulo02.GeradorSenhaTests\CSharp.Capitulo02.GeradorSenhaTests.csproj", "{23A3B194-93EB-4361-8541-AFB9EB05B827}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.Repositorios.SistemaArquivos", "Fintech.Repositorios.SistemaArquivos\Fintech.Repositorios.SistemaArquivos.csproj", "{0519A9A6-E4DE-48AF-8EE5-C374DB275A22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fintech.Repositorios.SistemaArquivosTests", "Fintech.Repositorios.SistemaArquivosTests\Fintech.Repositorios.SistemaArquivosTests.csproj", "{22D8A55E-AB5C-4910-A9E8-FDF7386E627F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,14 @@ Global
 		{23A3B194-93EB-4361-8541-AFB9EB05B827}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23A3B194-93EB-4361-8541-AFB9EB05B827}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23A3B194-93EB-4361-8541-AFB9EB05B827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0519A9A6-E4DE-48AF-8EE5-C374DB275A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0519A9A6-E4DE-48AF-8EE5-C374DB275A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0519A9A6-E4DE-48AF-8EE5-C374DB275A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0519A9A6-E4DE-48AF-8EE5-C374DB275A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22D8A55E-AB5C-4910-A9E8-FDF7386E627F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D8A55E-AB5C-4910-A9E8-FDF7386E627F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D8A55E-AB5C-4910-A9E8-FDF7386E627F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D8A55E-AB5C-4910-A9E8-FDF7386E627F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +78,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EB663812-09D4-432F-B68B-53212D58E677} = {B6380AA0-D16D-4335-B5E8-5BD1E86EF1B7}
 		{5155BA1B-8F48-4224-96CB-797A78B33479} = {B6380AA0-D16D-4335-B5E8-5BD1E86EF1B7}
+		{0519A9A6-E4DE-48AF-8EE5-C374DB275A22} = {B6380AA0-D16D-4335-B5E8-5BD1E86EF1B7}
+		{22D8A55E-AB5C-4910-A9E8-FDF7386E627F} = {B6380AA0-D16D-4335-B5E8-5BD1E86EF1B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C4C1A3B0-0AF0-433D-9923-CBC3C324D5A0}

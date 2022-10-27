@@ -161,7 +161,7 @@
                               CanUserAddRows="false" Width="580" HorizontalAlignment="Left" Margin="120 2 0 0">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Data" Binding="{Binding Path=Data}"/>
-                            <DataGridTextColumn Header="Operação" Binding="{Binding Path=Operacao}"/>
+                            <DataGridTextColumn Header="Operação" Binding="{Binding Path=TipoOperacao}"/>
                             <DataGridTextColumn Header="Valor" Binding="{Binding Path=Valor, StringFormat=C}"/>
                         </DataGrid.Columns>
                     </DataGrid>
